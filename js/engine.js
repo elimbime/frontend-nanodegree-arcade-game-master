@@ -81,7 +81,7 @@ var Engine = (function (global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
     }
 
     /* This is called by the update function and loops through all of the
@@ -162,7 +162,23 @@ var Engine = (function (global) {
     function reset() {
         // noop
     }
+    // A function that will determine wether the player is in the same square as ennemy
+    function checkCollisions() {
+        //we determine the player square
+        var xHitBoxPlayer =  Math.floor(player.x/player.xstep);
+        var yHitBoxPlayer =  Math.floor(player.y/player.ystep);
 
+        // we determinen each ennemy position
+        allEnemies.forEach(function (enemy) { 
+            var xHitBox = Math.floor(enemy.x/enemy.xstep);
+            var yHitBox = Math.floor(enemy.y/enemy.ystep);
+            //if the player and the ennemy are in the same square we reset the player
+            if(xHitBoxPlayer ===  xHitBox && yHitBoxPlayer === yHitBox)
+            {
+                player.resetY(); 
+            }
+        });
+    }
     /* Go ahead and load all of the images we know we're going to need to
      * draw our game level. Then set init as the callback method, so that when
      * all of these images are properly loaded our game will start.
