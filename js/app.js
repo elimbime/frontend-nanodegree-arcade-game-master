@@ -4,6 +4,11 @@ var Enemy = function (x, y) {
     // we've provided one for you to get started
     this.x = x;
     this.y = y;
+    this.xstep = 101;
+    this.ystep = 83;
+
+    this.xmax = 404;
+    this.xmin = 0;
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
@@ -37,35 +42,27 @@ Player.prototype = Object.create(Enemy.prototype);
 Player.prototype.constructor = Player;
 
 Player.prototype.handleInput = function (key) {
-    var xstep = 101;
-    var ystep = 83;
 
-    var xmax = 404;
-    var xmin = 0;
-
-    var ymax = 83*5;
-    var ymin = 0;
     switch (key) {
         case 'left':
-            if (this.x > xmin) {
-                this.x = this.x - xstep;
+            if (this.x > this.xmin) {
+                this.x = this.x - this.xstep;
             }
             break;
         case 'up':
-            if ( this.y > ymin) {
-                this.y = this.y - ystep;
+            if ( this.y > this.ymin) {
+                this.y = this.y - this.ystep;
             }
             break;
         case 'right':
-            if (this.x < xmax) {
-                this.x = this.x + xstep;
+            if (this.x < this.xmax) {
+                this.x = this.x + this.xstep;
             }
             break;
         case 'down':
-            if (this.y < ymax) {
-                this.y = this.y + ystep;
+            if (this.y < this.ymax) {
+                this.y = this.y + this.ystep;
             }
-
             break;
         default:
     }
