@@ -1,0 +1,28 @@
+// cSpell Settings
+{
+    // Version of the setting file.  Always 0.1
+    "version": "0.1",
+    // language - current active spelling language
+    "language": "en",
+    // words - list of words to be always considered correct
+    "words": [
+        "xstep",
+        "ystep",
+        "ymax",
+        "xmax",
+        "Predefine",
+        "xmin",
+        "ymin",
+        " * like a flipbook you may have created as a kid. When your player moves across\r\n",
+        "flipbook",
+        "flipbooks",
+        "frontend-nanodegree-arcade-game\r\n",
+        "nanodegree"
+    ],
+    // flagWords - list of words to be always considered incorrect
+    // This is useful for offensive words and common spelling errors.
+    // For example "hte" should be "the"
+    "flagWords": [
+        "hte"
+    ]
+}

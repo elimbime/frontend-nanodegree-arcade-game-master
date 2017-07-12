@@ -49,7 +49,7 @@ var Engine = (function (global) {
         update(dt);
         render();
 
-        /* Set our lastTime variable which is used to determine the tfime delta
+        /* Set our lastTime variable which is used to determine the time delta
          * for the next time this function is called.
          */
         lastTime = now;
@@ -162,17 +162,17 @@ var Engine = (function (global) {
     function reset() {
         // noop
     }
-    // A function that will determine wether the player is in the same square as ennemy
+    // A function that will determine wether the player is in the same square as enemy
     function checkCollisions() {
         //we determine the player square
         var xHitBoxPlayer =  Math.floor(player.x/player.xstep);
         var yHitBoxPlayer =  Math.floor(player.y/player.ystep);
 
-        // we determinen each ennemy position
+        // we determine each enemy position
         allEnemies.forEach(function (enemy) { 
             var xHitBox = Math.floor(enemy.x/enemy.xstep);
             var yHitBox = Math.floor(enemy.y/enemy.ystep);
-            //if the player and the ennemy are in the same square we reset the player
+            //if the player and the enemy are in the same square we reset the player
             if(xHitBoxPlayer ===  xHitBox && yHitBoxPlayer === yHitBox)
             {
                 player.resetY(); 

@@ -45,12 +45,12 @@ Enemy.prototype.update = function (dt) {
     }
 };
 
-// reset the x postion to the minimum
+// reset the x position to the minimum
 Enemy.prototype.resetX = function () {
         this.x = this.xmin;
 };
 
-// reset the y postion to the maximum
+// reset the y position to the maximum
 Enemy.prototype.resetY = function () {
         this.y = this.ymax;
 };
